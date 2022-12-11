@@ -1,0 +1,205 @@
+<section class="text-center"  id="login">
+    <!-- Background image -->
+    <div id="container" class="p-5 bg-image">
+        <div id="container-inside">
+            <div id="circle-small"></div>
+            <div id="circle-medium"></div>
+            <div id="circle-large"></div>
+            <div id="circle-xlarge"></div>
+            <div id="circle-xxlarge"></div>
+        </div>
+      </div>
+  
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img  src="animation/register.gif" class="img-fluid" alt="Register image">
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+    
+            <% if(typeof alert != 'undefined') { %>
+              <% alert.forEach(function(error) { %>
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <%= error.msg %>
+                      <button  type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                       
+                      </button>
+                    </div>
+              <% }) %>
+          <% } %>
+    
+            <form action="/register" method="post" role="form">
+              <!-- name input -->
+              <div class="form-group mb-lg-3">
+                <input name="name" class="form-control "  type="text">
+                <label class="form-label" for="form1Example13">Name</label>
+              </div>
+    
+              <!-- email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form1Example23" class="form-control "   name="email" />
+                <label class="form-label" for="form1Example23">Email</label>
+              </div>
+              
+               <!-- passone -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form1Example23" class="form-control "   name="passkey" /> <i class="bi bi-eye-slash" id="togglePassword"></i>
+                <label class="form-label" for="form1Example23">Password</label>
+              </div>
+              <!-- passtwo -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form1Example23" class="form-control "   name="confirmpasskey" />
+                <label class="form-label" for="form1Example23">Confirm Password</label>
+              </div>
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+    
+              <div class="divider d-flex align-items-center my-4">
+                <p class="text-center fw-bold mx-3 mb-0 text-muted">Have an account? <a href="#" onclick="login()">Log In</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+
+
+  <style>
+    #container{
+        background: #00adef;
+        background: -moz-linear-gradient(-45deg, #00adef 0%, #0076e5 100%);
+        background: -webkit-linear-gradient(-45deg, #00adef 0%,#0076e5 100%);
+        background: linear-gradient(135deg, #00adef 0%,#0076e5 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00adef', endColorstr='#0076e5',GradientType=1 );
+        position: relative;
+        height: 30vh;
+        width: 100%;
+        margin: 0px auto;
+        padding: 0px auto;
+    }
+    
+    #container-inside {
+        position: relative;
+        min-width: 960px;
+        max-width: 1280px;
+        height: auto;
+        min-height: 100%;
+        margin: 0px auto;
+        padding: 0px auto;
+        overflow: visible;
+    }
+    
+    #circle-small {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0s;
+        position: absolute;
+        top: 200px;
+        left: -150px;
+        background: #fff;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        opacity: 0.4;
+    }
+    
+    #circle-medium {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0.3s;
+        position: absolute;
+        top: 50px;
+        left: -300px;
+        background: #fff;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+    
+    #circle-large {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0.6s;
+        position: absolute;
+        top: -100px;
+        left: -450px;
+        background: #fff;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        opacity: 0.2;
+    }
+    
+    #circle-xlarge {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 0.9s;
+        position: absolute;
+        top: -250px;
+        left: -600px;
+        background: #fff;
+        width: 1200px;
+        height: 1200px;
+        border-radius: 50%;
+        opacity: 0.1;
+    }
+    
+    #circle-xxlarge {
+        -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation: circle-small-scale 3s ease-in-out infinite alternate;
+        animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+        animation-delay: 1.2s;
+        position: absolute;
+        top: -400px;
+        left: -750px;
+        background: #fff;
+        width: 1500px;
+        height: 1500px;
+        border-radius: 50%;
+        opacity: 0.05;
+    }
+    
+    @-webkit-keyframes circle-small-scale {
+        0% {
+            -webkit-transform: scale(1.0);
+        }
+        100% {
+            -webkit-transform: scale(1.1);
+        }
+    }
+    
+    @keyframes circle-small-scale {
+        0% {
+            transform: scale(1.0);
+        }
+        100% {
+            transform: scale(1.1);
+        }
+    }
+  </style>
+
+<style>
+  .divider:after,
+  .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgb(195, 194, 255);
+  }
+</style>
+
+
+    
